@@ -33,11 +33,18 @@ public:
         long long revdif = abs(num - rev);
         long long result = g;
         cout<<revdif<<" "<<gdif<<" "<<sdif<<endl;
-        if(sdif<=gdif){
-            result = s;
+        if(revdif == 0){
+            if(sdif<=gdif){
+                result = s;
+            }
         }
-        if(revdif<sdif && revdif<gdif && rev!=num){
-            result = rev;
+        else {
+            if(revdif<=gdif){
+                result = rev;
+                if(sdif<=revdif){
+                    result = s;
+                }
+            }
         }
         return to_string(result);
     }
