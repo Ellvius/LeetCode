@@ -8,6 +8,7 @@ public:
         for(int i=2 ; i*i < n; i++){
             if(ans[i]){
                 for(int j = i*i; j <n; j+=i){
+                    if(ans[j])
                     ans[j] = false;
                 }
             }
