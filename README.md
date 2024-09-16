@@ -12,6 +12,7 @@
 |  |
 | ------- |
 | [0539-minimum-time-difference](https://github.com/Ellvius/LeetCode/tree/master/0539-minimum-time-difference) |
+| [2383-add-two-integers](https://github.com/Ellvius/LeetCode/tree/master/2383-add-two-integers) |
 ## String
 |  |
 | ------- |
