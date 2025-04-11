@@ -8,23 +8,17 @@ public:
 
             if(len % 2) continue;
 
-            int left = stoi(num.substr(0, len/2));
-            int right = stoi(num.substr(len/2, len/2));
+            int half = len/2;
+            int leftSum = 0, rightSum = 0;
+            
+            for(int j = 0; j < half; j++)
+                leftSum += num[j] - '0';
 
-            int leftSum = 0;
-            int rightSum = 0;
-            while(left != 0){
-                leftSum += (left % 10);
-                left/=10;
-            }
+            for(int j = half; j < len; j++)
+                rightSum += num[j] - '0';
 
-            while(right != 0){
-                rightSum += (right % 10);
-                right /= 10;
-            }
-
-            if(leftSum == rightSum) count++;
-
+            if(leftSum == rightSum) 
+                count++;
         }
 
         return count;
