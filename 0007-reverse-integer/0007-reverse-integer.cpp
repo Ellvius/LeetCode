@@ -1,17 +1,20 @@
 class Solution {
 public:
     int reverse(int x) {
-        long int ans = 0;
-        int sign = (x<0) ? -1:1;
-        long int y = abs(static_cast<long int>(x));
-        while(y>0){
-            int dig = y%10;
-            ans = 10*ans + dig;
-            y = y / 10;
+        long n = x;
+        int sign = x < 0 ? -1: 1;
+        n = abs(n);
+        long r = 0;
+
+        while(n > 0){
+            r = (r * 10) + (n % 10);
+            n /= 10;
         }
-        if(ans > 2147483647 || ans < -2147483648){
+        r *= sign;
+        
+        if(r > INT32_MAX || r < INT32_MIN)
             return 0;
-        }
-        return sign*ans;
+
+        return r;
     }
 };
